@@ -24,6 +24,18 @@ class TasksController extends AppController
         $this->set(compact('tasks'));
     }
 
+    public function completed(){
+        $completed = $this->Tasks->find('all')
+        ->where(['Tasks.done' => true]);
+        $this->set(compact('completed'));
+    }
+
+    public function incompleted(){
+        $incompleted = $this->Tasks->find('all')
+        ->where(['Tasks.done' => false]);
+        $this->set(compact('incompleted'));
+    }
+
     /**
      * View method
      *

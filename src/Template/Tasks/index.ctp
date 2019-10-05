@@ -15,8 +15,10 @@
     <?= $this->Html->link(__('Novo'), ['action' => 'add']) ?>
 </button>
 <div>
+   
+
     <h3><?= __('Tasks') ?></h3>
-    <table class="table table-striped">
+    <table class="table table-striped float-left">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
@@ -29,21 +31,23 @@
         <tbody>
             <?php foreach ($tasks as $task) : ?>
                 <tr>
-                    <td><?= h($task->name) ?></td>
-                    <td><?= h($task->description) ?></td>
-                    <td><?= $task->done ? __('Yes') : __('No'); ?></td>
-                    
-                    <td class="actions">
-                        <button class="btn btn-outline-dark linkbtn">
-                            <?= $this->Html->link(__('Detail'), ['action' => 'view', $task->id]) ?>
-                        </button>
-                        <button type="button" class="btn btn-outline-secondary">
-                            <?= $this->Html->link(__('Edit'), ['action' => 'edit', $task->id]) ?>
-                        </button>
-                        <button type="button" class="btn btn-outline-danger">
-                            <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $task->id], ['confirm' => __('Are you sure you want to delete # {0}?', $task->id)]) ?>
-                        </button>
-                    </td>
+                    <?php if ($task->done==false) : ?>
+                        <td><?= h($task->name) ?></td>
+                        <td><?= h($task->description) ?></td>
+                        <td><?= $task->done ? __('Yes') : __('No'); ?></td>
+
+                        <td class="actions">
+                            <button class="btn btn-outline-dark linkbtn">
+                                <?= $this->Html->link(__('Detail'), ['action' => 'view', $task->id]) ?>
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary">
+                                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $task->id]) ?>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger">
+                                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $task->id], ['confirm' => __('Are you sure you want to delete # {0}?', $task->id)]) ?>
+                            </button>
+                        </td>
+                    <?php endif; ?>
                 </tr>
             <?php endforeach; ?>
         </tbody>
@@ -51,7 +55,6 @@
 
 </div>
 <style>
-
     strong {
         color: black;
     }
