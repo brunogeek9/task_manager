@@ -22,8 +22,6 @@
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('description') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('done') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <!-- <th scope="col"><?= $this->Paginator->sort('id') ?></th> -->
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -34,11 +32,9 @@
                     <td><?= h($task->name) ?></td>
                     <td><?= h($task->description) ?></td>
                     <td><?= $task->done ? __('Yes') : __('No'); ?></td>
-                    <td><?= h($task->created) ?></td>
-                    <td><?= h($task->modified) ?></td>
-
+                    
                     <td class="actions">
-                        <button type="button" class="btn btn-outline-dark linkbtn">
+                        <button class="btn btn-outline-dark linkbtn">
                             <?= $this->Html->link(__('Detail'), ['action' => 'view', $task->id]) ?>
                         </button>
                         <button type="button" class="btn btn-outline-secondary">

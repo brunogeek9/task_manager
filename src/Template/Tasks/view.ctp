@@ -10,16 +10,32 @@
 
 <div class="card text-left mx-auto " style="width: 25rem;">
     <div class="card-body">
-        <h5 class="card-title">
+        <h3 class="card-title">
             <?= h($task->name) ?>
-        </h5>
+        </h3>
     </div>
     <div class="card-body">
         <?= h($task->description) ?>
     </div>
 
     <div class="card-body">
-        <?= h($task->created) ?>
+        <div class="float-left">
+            <p><strong>Criada em: </strong></p>
+        </div>
+
+        <div class="float-right">
+            <?= h($task->created) ?>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="float-left">
+            <p><strong>Ultima modificação: </strong></p>
+        </div>
+
+        <div class="float-right">
+            <?= h($task->modified) ?>
+        </div>
     </div>
     <div class="card-body">
         <?= $task->done ? __('Completed') : __('inclomplete'); ?>
