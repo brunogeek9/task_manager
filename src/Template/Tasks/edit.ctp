@@ -1,31 +1,23 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Task $task
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $task->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $task->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Tasks'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
-<div class="tasks form large-9 medium-8 columns content">
-    <?= $this->Form->create($task) ?>
-    <fieldset>
-        <legend><?= __('Edit Task') ?></legend>
+<div class="card text-center mx-auto " style="width: 35rem;">
+    <div class="card-body">
+        <legend class="card-title"><?= __('Editar Tarefa') ?></legend>
+
+        <?= $this->BootsCakeForm->create($task) ?>
+
         <?php
-            echo $this->Form->control('name');
-            echo $this->Form->control('description');
-            echo $this->Form->control('done');
+        echo $this->BootsCakeForm->control('name', ['placeholder' => 'example: learn flutter']);
+        echo $this->BootsCakeForm->control('description');
+        echo $this->BootsCakeForm->control('done');
+
         ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+        <?= $this->BootsCakeForm->control(__('Salvar'), ['type' => 'submit', 'color' => 'primary']); ?>
+        <?= $this->BootsCakeForm->end() ?>
+    </div>
 </div>
