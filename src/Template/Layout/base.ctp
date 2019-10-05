@@ -31,6 +31,7 @@ $cakeDescription = 'Task Manager home';
     <?= $this->Html->css(['bootstrap.min.css']) ?>
     <?= $this->Html->script(['bootstrap.min.js']) ?>
     <?= $this->Html->script(['jquery-3.4.1']) ?>
+    <?= $this->Html->css(['fontawesome.min.css']) ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -41,24 +42,21 @@ $cakeDescription = 'Task Manager home';
 
     <div class="card text-center">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/task_manager/tasks">Gerenciador de Tarefas</a>
+            <a class="navbar-brand" href="/task_manager/tasks">
+                Gerenciador de Tarefas
+
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <!-- <a class="nav-link" href="#"> -->
-                        <!-- Criar Nova -->
                         <button type="button" class="btn btn-outline-dark">
-                            <?= $this->Html->link(__('Nova Tarefa'), ['action' => 'add']) ?>
                         </button>
-                        <!-- <span class="sr-only">(current)</span> -->
-                        <!-- </a> -->
-
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </nav>
         <div class="card-body" style="height: 50rem;">
             <?= $this->Flash->render() ?>
@@ -71,3 +69,29 @@ $cakeDescription = 'Task Manager home';
 </body>
 
 </html>
+<style>
+    strong {
+        color: black;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+
+    a:link,
+    a:visited {
+        text-decoration: none
+    }
+
+    a:active {
+        text-decoration: none;
+        color: red;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: black;
+    }
+</style>
