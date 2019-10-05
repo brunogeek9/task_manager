@@ -55,3 +55,24 @@
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>
+<style>
+    strong {
+        color: black;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    a:link,
+    a:visited {
+        text-decoration: none
+    }
+    a:active {
+        text-decoration: none;
+        color: red;
+    }
+    a:hover {
+        text-decoration: none;
+        color: black;
+    }
+</style>

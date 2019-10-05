@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bae3f640a631a993a49129d353eefbf9",
+    "content-hash": "2f84380bea8ac4d962b5ae2a97bff925",
     "packages": [
         {
             "name": "aura/intl",
@@ -291,6 +291,46 @@
             ],
             "description": "A composer installer for CakePHP 3.0+ plugins.",
             "time": "2019-07-25T15:43:38+00:00"
+        },
+        {
+            "name": "kacospro/bootscake",
+            "version": "v0.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KacosPro/bootscake.git",
+                "reference": "e7a6e0403fd315ad1f6d10f3642d475ce70038a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KacosPro/bootscake/zipball/e7a6e0403fd315ad1f6d10f3642d475ce70038a3",
+                "reference": "e7a6e0403fd315ad1f6d10f3642d475ce70038a3",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "~3.4",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "BootsCake\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carlos Proaño",
+                    "email": "sbncacos@gmail.com"
+                }
+            ],
+            "description": "Bootstrap 4 helpers for CakePHP 3.4",
+            "time": "2019-09-24T14:57:23+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
