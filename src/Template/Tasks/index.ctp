@@ -1,18 +1,20 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Task[]|\Cake\Collection\CollectionInterface $tasks
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Task'), ['action' => 'add']) ?></li>
+        <li></li>
     </ul>
-</nav>
-<div class="tasks index large-9 medium-8 columns content">
+</nav> -->
+<?= $this->Html->link(__('New Task'), ['action' => 'add']) ?>
+<div>
     <h3><?= __('Tasks') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
@@ -20,25 +22,25 @@
                 <th scope="col"><?= $this->Paginator->sort('done') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <!-- <th scope="col"><?= $this->Paginator->sort('id') ?></th> -->
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($tasks as $task): ?>
-            <tr>
-                <td><?= h($task->name) ?></td>
-                <td><?= h($task->description) ?></td>
-                <td><?= h($task->done) ?></td>
-                <td><?= h($task->created) ?></td>
-                <td><?= h($task->modified) ?></td>
-                <td><?= $this->Number->format($task->id) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $task->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $task->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $task->id], ['confirm' => __('Are you sure you want to delete # {0}?', $task->id)]) ?>
-                </td>
-            </tr>
+            <?php foreach ($tasks as $task) : ?>
+                <tr>
+                    <td><?= h($task->name) ?></td>
+                    <td><?= h($task->description) ?></td>
+                    <td><?= $task->done ? __('Yes') : __('No'); ?></td>
+                    <td><?= h($task->created) ?></td>
+                    <td><?= h($task->modified) ?></td>
+                    
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $task->id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $task->id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $task->id], ['confirm' => __('Are you sure you want to delete # {0}?', $task->id)]) ?>
+                    </td>
+                </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
