@@ -70,28 +70,5 @@ $cakeDescription = 'Task Manager home';
 
 </html>
 <style>
-    strong {
-        color: black;
-    }
-
-    a {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-    }
-
-    a:link,
-    a:visited {
-        text-decoration: none
-    }
-
-    a:active {
-        text-decoration: none;
-        color: red;
-    }
-
-    a:hover {
-        text-decoration: none;
-        color: black;
-    }
+    
 </style>
