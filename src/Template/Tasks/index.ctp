@@ -5,25 +5,20 @@
  * @var \App\Model\Entity\Task[]|\Cake\Collection\CollectionInterface $tasks
  */
 ?>
-<!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li></li>
-    </ul>
-</nav> -->
+
 <button type="button" class="btn btn-outline-dark float-left">
     <?= $this->Html->link(__('Novo'), ['action' => 'add']) ?>
 </button>
 <div>
-   
 
+    <!-- <div class="card float-left mt-5" > -->
     <h3><?= __('Tasks') ?></h3>
-    <table class="table table-striped float-left">
+    <table class="table table-striped float-left" style="width: 30rem;">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('description') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('done') ?></th>
+
                 <!-- <th scope="col"><?= $this->Paginator->sort('id') ?></th> -->
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -31,10 +26,41 @@
         <tbody>
             <?php foreach ($tasks as $task) : ?>
                 <tr>
-                    <?php if ($task->done==false) : ?>
+                    <?php if ($task->done == true) : ?>
                         <td><?= h($task->name) ?></td>
                         <td><?= h($task->description) ?></td>
-                        <td><?= $task->done ? __('Yes') : __('No'); ?></td>
+
+
+                        <td class="actions">
+                            <button class="btn btn-outline-dark linkbtn">
+                                <?= $this->Html->link(__('Detail'), ['action' => 'view', $task->id]) ?>
+                            </button>
+
+                        </td>
+                    <?php endif; ?>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+    <!-- </div> -->
+
+
+    <table class="table table-striped float-right" style="width: 30rem;">
+        <thead>
+            <tr>
+                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('description') ?></th>
+
+                <!-- <th scope="col"><?= $this->Paginator->sort('id') ?></th> -->
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($tasks as $task) : ?>
+                <tr>
+                    <?php if ($task->done == false) : ?>
+                        <td><?= h($task->name) ?></td>
+                        <td><?= h($task->description) ?></td>
 
                         <td class="actions">
                             <button class="btn btn-outline-dark linkbtn">
