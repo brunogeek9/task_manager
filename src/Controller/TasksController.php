@@ -13,6 +13,11 @@ use App\Controller\AppController;
  */
 class TasksController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('Flash'); // Inclui o FlashComponent
+    }
     /**
      * Index method
      *
@@ -77,11 +82,19 @@ class TasksController extends AppController
         if ($this->request->is('post')) {
             $task = $this->Tasks->patchEntity($task, $this->request->getData());
             if ($this->Tasks->save($task)) {
-                $this->Flash->success(__('The task has been saved.'));
-
+                // $this->Flash->success(__('The task has been saved.'));
+                $this->Flash->flash('The task has been saved.', [
+                    'params' => [
+                        'type' => 'success'
+                    ]
+                ]);
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The task could not be saved. Please, try again.'));
+            $this->Flash->flash('The task could not be saved. Please, try again.', [
+                'params' => [
+                    'type' => 'danger'
+                ]
+            ]);
         }
         $this->set(compact('task'));
     }
@@ -101,11 +114,19 @@ class TasksController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $task = $this->Tasks->patchEntity($task, $this->request->getData());
             if ($this->Tasks->save($task)) {
-                $this->Flash->success(__('The task has been saved.'));
+                $this->Flash->flash('The task has been saved.', [
+                    'params' => [
+                        'type' => 'success'
+                    ]
+                ]);
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The task could not be saved. Please, try again.'));
+            $this->Flash->flash('The task could not be saved. Please, try again.', [
+                'params' => [
+                    'type' => 'danger'
+                ]
+            ]);
         }
         $this->set(compact('task'));
     }
@@ -122,9 +143,17 @@ class TasksController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $task = $this->Tasks->get($id);
         if ($this->Tasks->delete($task)) {
-            $this->Flash->success(__('The task has been deleted.'));
+            $this->Flash->flash('The task has been deleted.', [
+                'params' => [
+                    'type' => 'warning'
+                ]
+            ]);
         } else {
-            $this->Flash->error(__('The task could not be deleted. Please, try again.'));
+            $this->Flash->flash('The task could not be deleted. Please, try again.', [
+                'params' => [
+                    'type' => 'danger'
+                ]
+            ]);
         }
 
         return $this->redirect(['action' => 'index']);
