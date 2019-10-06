@@ -24,12 +24,17 @@ configuration relevant for your application.
 For the layouts of page iam using [Bootstrap4](https://getbootstrap.com.br/)
 
 
-## Demonstration
+## Demonstration 1
 
 ![](todo_app.gif)
+
+## Demonstration 2
+
+![](demo2.gif)
 
 Get in Touch
 ===============
 
-I am available facebook **brunojamelli9**  linkedin **bruno-jamelli**  **brunogeek9@gmail**
+I am available facebook **brunojamelli9**  linkedin **bruno-jamelli**  gmail **@brunogeek9**
+
 More details about this project [here](https://medium.com/@brunojamelli/meu-primeiro-contato-com-o-cakephp-7d1db451891a)
