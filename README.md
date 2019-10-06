@@ -31,4 +31,4 @@ For the layouts of page iam using [Bootstrap4](https://getbootstrap.com.br/)
 Get in Touch
 ===============
 
-I am available facebook [**brunojamelli9**](https://www.facebook.com/brunojamelli9)  linkedin **bruno-jamelli** gmail **@brunogeek9**
+I am available facebook **brunojamelli9**  linkedin **bruno-jamelli**  **brunogeek9@gmail**
