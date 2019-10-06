@@ -10,47 +10,40 @@
     Create New
 </a>
 <div>
-
+    <!-- card bootstrap com a tabela que mostra a lista de tarefas completadas -->
     <div class="card float-left mt-4 mytable">
         <h3><?= __('completed tasks') ?></h3>
-        <table class="table">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-
-
                     <th scope="col" class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($tasks as $incp) : ?>
+                <?php foreach ($completed as $comp) : ?>
                     <tr>
-                        <?php if ($incp->done == true) : ?>
-                            <td><?= h($incp->name) ?></td>
-
-
-
-                            <td class="actions">
-                                <button class="btn btn-primary ">
-                                    <?= $this->Html->link(__('Detail'), ['action' => 'view', $incp->id]) ?>
-                                </button>
-                                <button class="btn btn-warning">
-                                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $incp->id]) ?>
-                                </button>
-                                <button class="btn btn-danger">
-                                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $incp->id], ['confirm' => __('Are you sure you want to delete # {0}?', $incp->id)]) ?>
-                                </button>
-                            </td>
-                        <?php endif; ?>
+                        <td><?= h($comp->name) ?></td>
+                        <td class="actions">
+                            <button class="btn btn-primary ">
+                                <?= $this->Html->link(__('Detail'), ['action' => 'view', $comp->id]) ?>
+                            </button>
+                            <button class="btn btn-warning">
+                                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $comp->id]) ?>
+                            </button>
+                            <button class="btn btn-danger">
+                                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $comp->id], ['confirm' => __('Are you sure you want to delete # {0}?', $comp->id)]) ?>
+                            </button>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     </div>
-
+    <!-- card bootstrap com a tabela que mostra a lista de tarefas incompletadas -->    
     <div class="card float-right mt-4 mytable">
         <h3><?= __('incompleted tasks') ?></h3>
-        <table class="table table-striped float-right" style="width: 30rem;">
+        <table class="table table-striped" style="width: 30rem;">
             <thead>
                 <tr>
                     <th scope="col"><?= $this->Paginator->sort('name') ?></th>
@@ -58,18 +51,18 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($incompleted as $incp) : ?>
+                <?php foreach ($incompleted as $comp) : ?>
                     <tr>
-                        <td><?= h($incp->name) ?></td>
+                        <td><?= h($comp->name) ?></td>
                         <td class="actions">
                             <button class="btn btn-primary">
-                                <?= $this->Html->link(__('Detail'), ['action' => 'view', $incp->id]) ?>
+                                <?= $this->Html->link(__('Detail'), ['action' => 'view', $comp->id]) ?>
                             </button>
                             <button class="btn btn-warning">
-                                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $incp->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $comp->id]) ?>
                             </button>
                             <button class="btn btn-danger">
-                                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $incp->id], ['confirm' => __('Are you sure you want to delete # {0}?', $incp->id)]) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $comp->id], ['confirm' => __('Are you sure you want to delete # {0}?', $comp->id)]) ?>
                             </button>
                         </td>
                     </tr>

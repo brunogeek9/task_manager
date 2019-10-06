@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -21,27 +22,31 @@ class TasksController extends AppController
     {
         $tasks = $this->paginate($this->Tasks);
         // buscando tarefas incompletas
-        $incompleted = $this->Tasks->find('all')
-        ->where(['Tasks.done' => false]);
+        $incompleted = $this->paginate(
+            $this->Tasks->find('all')
+                ->where(['Tasks.done' => false])
+        );
         // buscando as tarefas completas
         $completed = $this->Tasks->find('all')
-        ->where(['Tasks.done' => true]);
+            ->where(['Tasks.done' => true]);
         // passando todos os arrays para a view
-        $this->set(compact('tasks','incompleted','completed'));
+        $this->set(compact('tasks', 'incompleted', 'completed'));
     }
 
-    public function completed(){
+    public function completed()
+    {
         $incompleted = $this->Tasks->find('all')
-        ->where(['Tasks.done' => false]);
+            ->where(['Tasks.done' => false]);
 
         $completed = $this->Tasks->find('all')
-        ->where(['Tasks.done' => true]);
-        $this->set(compact('incompleted','completed'));
+            ->where(['Tasks.done' => true]);
+        $this->set(compact('incompleted', 'completed'));
     }
 
-    public function incompleted(){
+    public function incompleted()
+    {
         $incompleted = $this->Tasks->find('all')
-        ->where(['Tasks.done' => false]);
+            ->where(['Tasks.done' => false]);
         $this->set(compact('incompleted'));
     }
 
