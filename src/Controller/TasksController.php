@@ -35,7 +35,9 @@ class TasksController extends AppController
         $completed = $this->Tasks->find('all')
             ->where(['Tasks.done' => true]);
         // passando todos os arrays para a view
-        $this->set(compact('tasks', 'incompleted', 'completed'));
+        $compQtd = $completed->count();
+        $incompQtd = $incompleted->count();
+        $this->set(compact('tasks', 'incompleted', 'completed','compQtd','incompQtd'));
     }
 
     public function completed()

@@ -13,6 +13,7 @@
     <!-- card bootstrap com a tabela que mostra a lista de tarefas completadas -->
     <div class="card float-left mt-4 mytable">
         <h3><?= __('completed tasks') ?></h3>
+        <h5 class="font-weight-bold"> Tarefas Completas: <?= h($compQtd)?></h5>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -43,6 +44,7 @@
     <!-- card bootstrap com a tabela que mostra a lista de tarefas incompletadas -->    
     <div class="card float-right mt-4 mytable">
         <h3><?= __('incompleted tasks') ?></h3>
+        <h5 class="font-weight-bold"> Tarefas Completas: <?= h($incompQtd)?></h5>
         <table class="table table-striped" style="width: 30rem;">
             <thead>
                 <tr>
