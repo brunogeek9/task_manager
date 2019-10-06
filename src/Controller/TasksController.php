@@ -20,8 +20,14 @@ class TasksController extends AppController
     public function index()
     {
         $tasks = $this->paginate($this->Tasks);
-
-        $this->set(compact('tasks'));
+        // buscando tarefas incompletas
+        $incompleted = $this->Tasks->find('all')
+        ->where(['Tasks.done' => false]);
+        // buscando as tarefas completas
+        $completed = $this->Tasks->find('all')
+        ->where(['Tasks.done' => true]);
+        // passando todos os arrays para a view
+        $this->set(compact('tasks','incompleted','completed'));
     }
 
     public function completed(){
