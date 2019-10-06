@@ -42,7 +42,7 @@ $cakeDescription = 'Task Manager home';
 
     <div class="card text-center">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/task_manager/tasks">
+            <a class="navbar-brand" href="/task_manager">
                 Gerenciador de Tarefas
 
             </a>
