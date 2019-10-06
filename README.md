@@ -32,3 +32,4 @@ Get in Touch
 ===============
 
 I am available facebook **brunojamelli9**  linkedin **bruno-jamelli**  **brunogeek9@gmail**
+More details about this project [here](https://medium.com/@brunojamelli/meu-primeiro-contato-com-o-cakephp-7d1db451891a)
